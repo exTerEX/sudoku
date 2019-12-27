@@ -1,0 +1,19 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+flake8-black = "*"
+flake8 = "*"
+black = "*"
+pylint = "*"
+
+[packages]
+pygame = "==1.9.6"
+
+[requires]
+python_version = ""
+
+[pipenv]
+allow_prereleases = true
