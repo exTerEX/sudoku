@@ -1,0 +1,31 @@
+{
+	"folders": [
+		{
+			"name": "Sudoku",
+			"path": "."
+		}
+	],
+	"settings": {
+		"breadcrumbs.enabled": false,
+		"editor.minimap.enabled": false,
+		"files.exclude": {
+			"**/.git": true,
+			"**/.venv": true,
+			"**/Pipfile.lock": true,
+			"**/src/__pycache__": true
+		},
+		"python.analysis.cacheFolderPath": "${workspaceFolder}/__pycache__/",
+		"python.formatting.provider": "black",
+		"python.linting.flake8Enabled": true,
+		"python.pythonPath": ".venv/bin/python3.6"
+	},
+	"extensions": {},
+	"launch": {
+		"configurations": [],
+		"compounds": []
+	},
+	"tasks": {
+		"version": "2.0.0",
+		"tasks": []
+	}
+}
