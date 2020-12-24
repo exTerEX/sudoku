@@ -1,19 +1,15 @@
 [[source]]
 name = "pypi"
-url = "https://pypi.org/simple"
+url = "https://pypi.python.org/simple"
 verify_ssl = true
 
+[requires]
+python_version = "" # Check more of this
+
 [dev-packages]
-flake8-black = "*"
-flake8 = "*"
-black = "*"
 pylint = "*"
+autopep8 = "*"
 
 [packages]
-pygame = "==1.9.6"
-
-[requires]
-python_version = ""
-
-[pipenv]
-allow_prereleases = true
+numpy = {version = ">=1.19,<1.20"}
+pygame = {version = "*"} # Check versioning
