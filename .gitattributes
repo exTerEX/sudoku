@@ -1,0 +1,29 @@
+* text=auto
+
+# Python
+*.py     text diff=python
+*.pickle -text
+
+# Jupyter notebook
+*.ipynb  text linguist-vendored
+
+# Scripts
+*.sh    text eol=lf
+*.ps1   text eol=crlf
+
+# Archives
+*.7z    -text
+*.gz    -text
+*.tar   -text
+*.zip   -text
+
+# Documents
+*.pdf   -text
+
+# Images
+*.jpg   -text
+*.png   -text
+
+# Other
+*.exe   -text
+.git*   export-ignore
