@@ -6,8 +6,8 @@ jobs = 0
 
 [tool.pylint.messages_control]
 disable = [
-    "unsubscriptable-object",
-    "too-many-lines",
+    "missing-class-docstring",
+    "missing-module-docstring",
     "missing-function-docstring",
 ]
 
