@@ -61,13 +61,13 @@ class Interface(Frame):
 
         for index in range(GRID_LEN):
             for jndex in range(GRID_LEN):
-                answer = self.game.puzzle[index][jndex]
+                answer = self.game._useradd_puzzle[index][jndex]
 
                 if answer != 0:
                     x_pos = MARGIN + jndex * SIDE + SIDE / 2
                     y_pos = MARGIN + index * SIDE + SIDE / 2
 
-                    original = self.game.start_puzzle[index][jndex]
+                    original = self.game._initial_puzzle[index][jndex]
                     color = "black" if answer == original else "sea green"
 
                     self.canvas.create_text(x_pos, y_pos, text=answer, tags="numbers", fill=color)
@@ -103,7 +103,7 @@ class Interface(Frame):
                 32))
 
     def _cell_clicked(self, event):
-        if self.game.game_over:
+        if self.game._game_over_status:
             return
 
         x_pos, y_pos = event.x, event.y
@@ -114,7 +114,7 @@ class Interface(Frame):
 
             if (row, col) == (self.row, self.col):
                 self.row, self.col = -1, -1
-            elif self.game.puzzle[row][col] == 0:
+            elif self.game._useradd_puzzle[row][col] == 0:
                 self.row, self.col = row, col
         else:
             self.row, self.col = -1, -1
@@ -122,11 +122,11 @@ class Interface(Frame):
         self._draw_cursor()
 
     def _key_pressed(self, event):
-        if self.game.game_over:
+        if self.game._game_over_status:
             return
 
         if self.row >= 0 and self.col >= 0 and event.char in "1234567890":
-            self.game.puzzle[self.row][self.col] = int(event.char)
+            self.game._useradd_puzzle[self.row][self.col] = int(event.char)
             self.col, self.row = -1, -1
 
             self._draw_puzzle()
