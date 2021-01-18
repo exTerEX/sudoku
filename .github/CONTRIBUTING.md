@@ -5,11 +5,11 @@
 Before you begin:
 
 - Have you read the [code of conduct](https://github.com/exTerEX/sudoku/blob/main/.github/CODE_OF_CONDUCT.md)?
-- Check out the [existing issues](https://github.com/github/sudoku/issues).
+- Check out the [existing issues](https://github.com/exTerEX/sudoku/issues).
 
 ### Don't see your issue? Open one
 
-If you spot something new, open an issue using a [template](https://github.com/github/sudoku/issues/new/choose). We'll use the issue to have a conversation about the problem you want to fix.
+If you spot something new, open an issue using a [template](https://github.com/exTerEX/sudoku/issues/new/choose). We'll use the issue to have a conversation about the problem you want to fix.
 
 ### Ready to make a change? Fork the repo
 
