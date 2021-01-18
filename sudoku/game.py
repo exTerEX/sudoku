@@ -7,7 +7,7 @@ from board import Board
 class Game:
     def __init__(self, board_file):
         self.board_file = board_file
-        self.start_puzzle = Board(board_file).board
+        self.start_puzzle = Board(board_file).puzzle
 
     def start(self):
         self.game_over = False
