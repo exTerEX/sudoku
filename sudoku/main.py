@@ -24,6 +24,7 @@ class Interface(Frame):
 
     def init(self):
         self.parent.title("Sudoku")
+        self.parent.wm_iconbitmap("sudoku/resources/logo/sudoku-icon.ico")
         self.pack(fill=BOTH)
         self.canvas = Canvas(self, width=WIDTH, height=HEIGHT)
         self.canvas.pack(fill=BOTH, side=TOP)
@@ -64,43 +65,44 @@ class Interface(Frame):
                 answer = self.game._useradd_puzzle[index][jndex]
 
                 if answer != 0:
-                    x_pos = MARGIN + jndex * SIDE + SIDE / 2
-                    y_pos = MARGIN + index * SIDE + SIDE / 2
+                    color = "black" if answer == self.game._initial_puzzle[index][jndex] else "sea green"
 
-                    original = self.game._initial_puzzle[index][jndex]
-                    color = "black" if answer == original else "sea green"
-
-                    self.canvas.create_text(x_pos, y_pos, text=answer, tags="numbers", fill=color)
+                    self.canvas.create_text(
+                        MARGIN + jndex * SIDE + SIDE / 2,
+                        MARGIN + index * SIDE + SIDE / 2,
+                        text=answer,
+                        tags="numbers",
+                        fill=color)
 
     def _draw_cursor(self):
         self.canvas.delete("cursor")
 
         if self.row >= 0 and self.col >= 0:
-            x_0 = MARGIN + self.col * SIDE + 1
-            y_0 = MARGIN + self.row * SIDE + 1
-            x_1 = MARGIN + (self.col + 1) * SIDE - 1
-            y_1 = MARGIN + (self.row + 1) * SIDE - 1
-
-            self.canvas.create_rectangle(x_0, y_0, x_1, y_1, outline="red", tags="cursor")
+            self.canvas.create_rectangle(
+                MARGIN + self.col * SIDE + 1,
+                MARGIN + self.row * SIDE + 1,
+                MARGIN + (self.col + 1) * SIDE - 1,
+                MARGIN + (self.row + 1) * SIDE - 1,
+                outline="red",
+                tags="cursor")
 
     def _draw_victory(self):
-        x_0 = y_0 = MARGIN + SIDE * 2
-        x_1 = y_1 = MARGIN + SIDE * 7
-
-        self.canvas.create_oval(x_0, y_0, x_1, y_1, tags="victory",
-                                fill="dark orange", outline="orange")
-
-        x_pos = y_pos = MARGIN + 4 * SIDE + SIDE / 2
+        self.canvas.create_oval(
+            MARGIN + SIDE * 2,
+            MARGIN + SIDE * 2,
+            MARGIN + SIDE * 7,
+            MARGIN + SIDE * 7,
+            tags="victory",
+            fill="dark orange",
+            outline="orange")
 
         self.canvas.create_text(
-            x_pos,
-            y_pos,
+            MARGIN + 4 * SIDE + SIDE / 2,
+            MARGIN + 4 * SIDE + SIDE / 2,
             text="You win!",
             tags="victory",
             fill="white",
-            font=(
-                "Arial",
-                32))
+            font=("Arial", 32))
 
     def _cell_clicked(self, event):
         if self.game._game_over_status:
@@ -149,8 +151,6 @@ if __name__ == "__main__":
         game.start()
 
         root = Tk()
-
-        root.wm_iconbitmap("sudoku/resources/logo/sudoku-icon.ico")
 
         Interface(root, game)
 
