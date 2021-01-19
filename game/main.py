@@ -24,7 +24,7 @@ class Interface(Frame):
 
     def init(self):
         self.parent.title("Sudoku")
-        self.parent.wm_iconbitmap("sudoku/resources/logo/sudoku-icon.ico")
+        self.parent.wm_iconbitmap("game/resources/logo/sudoku-icon.ico")
         self.pack(fill=BOTH)
         self.canvas = Canvas(self, width=WIDTH, height=HEIGHT)
         self.canvas.pack(fill=BOTH, side=TOP)
