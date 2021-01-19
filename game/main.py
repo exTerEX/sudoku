@@ -8,14 +8,15 @@ from game import Game
 BOARDS = ["easy", "hard", "debug", "error"]
 MARGIN = 20
 SIDE = 50
-WIDTH = HEIGHT = MARGIN * 2 + SIDE * 9
 GRID_LEN = 9
+WIDTH = HEIGHT = MARGIN * 2 + SIDE * GRID_LEN
 
 
 class Interface(Frame):
     def __init__(self, parent, obj):
-        self.game = obj
         Frame.__init__(self, parent)
+
+        self.game = obj
         self.parent = parent
 
         self.row, self.col = -1, -1
@@ -146,7 +147,7 @@ class Interface(Frame):
 if __name__ == "__main__":
     NAME = "easy"
 
-    with open(f"sudoku/resources/deck/{NAME}.sudoku", "r") as file:
+    with open(f"game/resources/deck/{NAME}.sudoku", "r") as file:
         game = Game(file)
         game.start()
 
